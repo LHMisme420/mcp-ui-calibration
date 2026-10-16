@@ -1,0 +1,17 @@
+{
+  "description": "UI calibration target for mcp-authscan. A correct UI shows exactly these counts.",
+  "totals": {"CRITICAL": 1, "HIGH": 2, "MEDIUM": 3, "LOW": 0, "total": 6},
+  "findings": [
+    {"severity": "CRITICAL", "rule": "A2",  "location": "server.py:10", "what": "hardcoded credential API_KEY"},
+    {"severity": "HIGH",     "rule": "A10", "location": "server.py:12", "what": "FastMCP on http transport with auth=None"},
+    {"severity": "HIGH",     "rule": "C1",  "location": "server.py:15", "what": "ClientCredentialsOAuthProvider without issuer="},
+    {"severity": "MEDIUM",   "rule": "A1",  "location": "oauth.py:7",   "what": "authorize handler trusts redirect_uri"},
+    {"severity": "MEDIUM",   "rule": "A6",  "location": "proxy.py:3",   "what": "authorization enforced only on tools/call"},
+    {"severity": "MEDIUM",   "rule": "A4",  "location": "server.py:25", "what": "outbound request to caller-controlled URL"}
+  ],
+  "known_ui_miscounts": {
+    "counts only CRITICAL and MEDIUM lines (app.py on main)": 4,
+    "counts only CRITICAL and HIGH": 3,
+    "counts one severity only": "1, 2 or 3"
+  }
+}
